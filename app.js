@@ -5,44 +5,44 @@ const SERVICES = {
       name: "Комбі-манікюр + гель-лак",
       price: 950,
       duration: 90,
-      desc: "Зняття, комбінований манікюр, вирівнювання базою та однотонне покриття."
+      desc: "Зняття старого покриття, комбінований манікюр, вирівнювання базою та однотонне покриття."
     },
     {
       id: "mani-hard",
       name: "Укріплення твердим гелем",
       price: 1150,
       duration: 110,
-      desc: "Ідеальна архітектура нігтів, стійкість 4+ тижні без відшарувань."
+      desc: "Вирівнювання та укріплення нігтьової пластини твердим гелем перед покриттям."
     },
     {
       id: "pedi-spa",
-      name: "SPA-педикюр SMART + покриття",
+      name: "Смарт-педикюр + покриття",
       price: 1300,
       duration: 100,
-      desc: "Делікатна обробка стопи дисками, скраб, живильний крем і покриття."
+      desc: "Обробка стопи смарт-дисками, догляд за кутикулою та покриття гель-лаком."
     }
   ],
   brows: [
     {
       id: "brow-arch",
-      name: "Архітектура брів + фарбування",
+      name: "Корекція та фарбування брів",
       price: 650,
       duration: 45,
-      desc: "Корекція пінцетом/воском, підбір форми та стійке фарбування."
+      desc: "Підбір форми, корекція воском або пінцетом та фарбування фарбою або хною."
     },
     {
       id: "brow-lami",
-      name: "Ламінування брів (комплекс)",
+      name: "Ламінування брів",
       price: 950,
       duration: 60,
-      desc: "Довготривала укладка, фарбування, корекція та живлення ботоксом."
+      desc: "Довготривала укладка неслухняних волосків, фарбування, корекція та догляд."
     },
     {
       id: "lash-lami",
       name: "Ламінування вій + фарбування",
       price: 1100,
       duration: 70,
-      desc: "Природний вигин та виразний погляд до 6 тижнів без нарощування."
+      desc: "Завиток, фіксація форми та фарбування натуральних вій без нарощування."
     }
   ],
   hair: [
@@ -51,21 +51,21 @@ const SERVICES = {
       name: "Стрижка + укладка",
       price: 1200,
       duration: 75,
-      desc: "Миття голови преміум-доглядом, підбір форми під тип обличчя та укладка."
+      desc: "Миття голови, стрижка з урахуванням форми обличчя та укладка по формі."
     },
     {
       id: "hair-airtouch",
       name: "Складне фарбування Airtouch",
       price: 4200,
       duration: 240,
-      desc: "М'який перехід кольору, тонування та захист структури волосся."
+      desc: "Техніка плавного переходу кольору з тонуванням і захисним доглядом."
     },
     {
       id: "hair-care",
       name: "Холодне відновлення волосся",
       price: 1650,
       duration: 90,
-      desc: "Глибока реконструкція ліпідного шару та дзеркальний блиск."
+      desc: "Глибоке живлення та відновлення пошкодженого волосся ампульним доглядом."
     }
   ],
   face: [
@@ -74,21 +74,21 @@ const SERVICES = {
       name: "Комбінована чистка обличчя",
       price: 1450,
       duration: 90,
-      desc: "Ультразвук + мануальна чистка, заспокійлива маска та SPF-фініш."
+      desc: "Ультразвукова та мануальна чистка, заспокійлива маска та сонцезахисний крем."
     },
     {
       id: "face-peel",
       name: "Всесезонний пілінг PRX-T33",
       price: 1900,
       duration: 45,
-      desc: "Ліфтинг-ефект та сяйво шкіри без лущення та періоду реабілітації."
+      desc: "Оновлювальний пілінг без сильного лущення, підходить у будь-яку пору року."
     },
     {
       id: "face-massage",
-      name: "Моделюючий масаж обличчя",
+      name: "Моделювальний масаж обличчя",
       price: 1150,
       duration: 60,
-      desc: "Зняття набряків, чіткий овал обличчя та глибоке розслаблення."
+      desc: "Масаж обличчя та шиї для зменшення набряків і зняття м'язової напруги."
     }
   ]
 };
@@ -114,7 +114,7 @@ function applyUrlPersonalization() {
 
   if (customName) {
     bookingState.brandName = customName;
-    document.title = `${customName} — Онлайн-запис за 30 секунд`;
+    document.title = `${customName}: онлайн-запис за 30 секунд`;
     document.getElementById("ribbonBrand").textContent = customName;
     document.getElementById("brandNameHeader").textContent = customName.toUpperCase();
     document.getElementById("brandNameHero").textContent = customName;
@@ -125,7 +125,7 @@ function applyUrlPersonalization() {
   }
 
   if (customCity) {
-    document.getElementById("cityBadge").textContent = `${customCity} • Вільні віконця на сьогодні`;
+    document.getElementById("cityBadge").textContent = `${customCity} · Вільні віконця на сьогодні`;
   }
 
   if (customTg) {
@@ -150,9 +150,9 @@ function renderServices(category) {
           <p class="service-card__desc">${item.desc}</p>
         </div>
         <div class="service-card__foot">
-          <span>⏱ ~${item.duration} хв</span>
+          <span>~${item.duration} хв</span>
           <button type="button" class="btn btn--sm btn--outline pick-service-btn" data-id="${item.id}">
-            Обрати →
+            Обрати
           </button>
         </div>
       </article>
@@ -172,7 +172,7 @@ function renderServices(category) {
 function populateServiceSelect() {
   const select = document.getElementById("serviceSelect");
   select.innerHTML = ALL_SERVICES.map(
-    (s) => `<option value="${s.id}">${s.name} — ${s.price} грн (~${s.duration} хв)</option>`
+    (s) => `<option value="${s.id}">${s.name} · ${s.price} грн (~${s.duration} хв)</option>`
   ).join("");
 
   select.value = bookingState.serviceId;
@@ -194,7 +194,7 @@ function updateSummary() {
   const discounted = Math.round(service.price * 0.85);
   document.getElementById("summaryPrice").textContent = `${discounted} грн`;
   document.getElementById("summaryOldPrice").textContent = `${service.price} грн`;
-  document.getElementById("summaryDuration").textContent = `⏱ ~${service.duration} хв`;
+  document.getElementById("summaryDuration").textContent = `~${service.duration} хв`;
 }
 
 // 4. Перемикачі чипсів (майстер, день, час)
